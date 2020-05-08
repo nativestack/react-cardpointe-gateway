@@ -1,12 +1,36 @@
 {
   "name": "react-cardpointe-gateway",
   "version": "0.1.0",
-  "private": true,
+  "description": "CardConnect Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe on React.js.",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nativestack/react-cardpointe-gateway.git"
+  },
+  "keywords": [
+    "payments",
+    "merchant-account",
+    "emv-token",
+    "react",
+    "card-pointe",
+    "native-stack",
+    "card-secure",
+    "card-connect",
+    "credit-cards",
+    "pci-compliant"
+  ],
+  "author": "NativeStack Engineering",
+  "license": "IPA",
+  "bugs": {
+    "url": "https://github.com/nativestack/react-cardpointe-gateway/issues"
+  },
+  "homepage": "https://github.com/nativestack/react-cardpointe-gateway#readme",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
