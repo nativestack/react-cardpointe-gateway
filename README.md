@@ -1,3 +1,9 @@
+# CardPointe Gateway Tokenizer for React.js
+
+**Authored By: [NativeStack Engineering](https://www.upwork.com/ag/nativestack/)**
+
+CardConnect's CardPointe Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

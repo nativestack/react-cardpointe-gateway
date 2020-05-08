@@ -8,8 +8,6 @@ export default class CardPointeTokenizer extends Component {
 		super(props);
 
 		this.state = {
-			isLoading: false,
-			validated: false,
 			emvToken: "",
 			expiryDate: "",
 		};
@@ -33,17 +31,19 @@ export default class CardPointeTokenizer extends Component {
 					expiryDate: dte,
 				});
 
-				console.log("This is the Token: ", this.state.emvToken);
-				console.log("EXPIRY DATE: ", this.state.expiryDate);
+				const emvData = {
+					token: tkn,
+					expiryDate: dte,
+				};
+
+				this.props.tokenProps.userEmvData(emvData);
 			},
 			false
 		);
 	};
 
 	renderTokenizerUi() {
-		const { validated } = this.state.validated;
-		const url =
-			"https://fts-uat.cardconnect.com:6443/itoke/ajax-tokenizer.html";
+		const url = `https://${this.props.site}.cardconnect.com:${this.props.port}/itoke/ajax-tokenizer.html`;
 		// #ccnumfield #cccvvfield #ccexpiryyear #ccexpirymonth {}
 		//&input{font-size:18px;height:21px;padding:10px;line-height:1.5;border-radius:3px; color:#495057;background-color:#fff;background-clip:padding-box;border:1pxsolid#ced4da;overflow:visible;margin:0;font-family:'Open+Sans','Segoe+UI','DejaVu+Sans','sans-serif';-webkit-appearance:textfield;}
 		const cssStyle =
@@ -73,9 +73,6 @@ export default class CardPointeTokenizer extends Component {
 					name="order"
 					method="post"
 					id="tokenform"
-					noValidate
-					validated={validated}
-					onSubmit={this.validateForm}
 				>
 					{/* This is the Number FG */}
 					<Form.Group
