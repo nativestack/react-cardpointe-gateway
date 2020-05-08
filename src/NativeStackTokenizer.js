@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./NativeStackTokenizer.css";
 import CardPointeTokenizer from "./components/CardPointeTokenizer";
 
-class App extends Component {
+class NativeStackTokenizer extends Component {
   constructor(props) {
     super(props);
     // NOTE: Parent must have emvData object
@@ -59,8 +59,8 @@ class App extends Component {
     return (
       <div className="App">
         <CardPointeTokenizer
-          site="fts-uat"
-          port="6443"
+          site={this.props.site}
+          port={this.props.port}
           tokenProps={tokenProps}
         />
       </div>
@@ -68,4 +68,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default NativeStackTokenizer;

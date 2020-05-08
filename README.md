@@ -4,71 +4,98 @@
 
 CardConnect's CardPointe Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+`npm install react-cardpointe-gateway`
 
-In the project directory, you can run:
+### Implementation
 
-### `npm start`
+In the `constructor` of the parent component with the implementation of the component, declare a state attribute as such:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+constructor(props) {
+	super(props);
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    this.state = {
+    	emvData: ""
+    };
+}
+```
 
-### `npm test`
+Next implement a `componentDidUpdate()` function as such:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+	componentDidUpdate() {
+    	console.log("This is the TokenData: ", this.state.emvData);
+    	/* NOTE: This is the function passed into props
+     	*
+     	*       This will send token data back to Parent component
+     	*
+     	*       @return {token: "9418594164541111", expiryDate: "202312"}
+     	*/
+    	try {
+    		this.props.tokenProps.userEmvData(this.state.emvData);
+    	} catch (err) {
+    		console.log("UPDATING CARD");
+    	}
+	}
+```
 
-### `npm run build`
+Next, implement this function in your parent component to be used by the `react-cardpointe-gateway` tokenizer. This needs to go in the same file where you will call your component from.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+	/* NOTE:
+     * @function userEmvData
+     * @param emvData
+     * Parent component must implement function
+     * to pass emvData returned from child into
+     * state.
+     */
+	userEmvData = (emvData) => {
+		this.setState({
+			emvData: emvData,
+		});
+	};
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The `render` function in your parent component needs to declare an object that will be used to pass the authentication data needed by the payment gateway to tokenize any credit card securely and in compliance with PCI with an implementation like the example below:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+	render() {
+		/* NOTE:
+		* @const tokenProps
+		* Parent component must declare tokenProps
+		* in render function to pass userEmvData
+		* function into child component props.
+		*/
+		const tokenProps = {
+			// below is token info
+			userEmvData: this.userEmvData,
+		};
 
-### `npm run eject`
+		/*
+		* NOTE: User has to pass tokenProps into props
+		*       for child component to allow this to access
+		*       the function in parent component.
+		*/
+		return (
+			<div className="App">
+				<NativeStackTokenizer
+					site="fts-uat"
+					port="6443"
+					tokenProps={tokenProps}
+				/>
+			</div>
+		);
+	}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**IPA**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Contact: Support@NativeStack.io**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Keywords
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+payments, merchant-account, emv-token, react, card-pointe, native-stack, card-secure, card-connect, credit-cards, pci-compliant
