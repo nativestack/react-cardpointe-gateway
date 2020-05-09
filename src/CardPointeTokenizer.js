@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import "./CardPointeTokenizer.css";
 
-export default class App extends Component {
+export default class CardPointeTokenizer extends Component {
 	constructor(props) {
 		super(props);
 
