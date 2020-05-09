@@ -58,7 +58,7 @@ class NativeStackTokenizer extends Component {
      */
     return (
       <div className="App">
-        <CardPointeTokenizer
+        <App
           site={this.props.site}
           port={this.props.port}
           tokenProps={tokenProps}
