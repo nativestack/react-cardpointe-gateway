@@ -43,15 +43,15 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var CardPointeTokenizer = /*#__PURE__*/function (_Component) {
-  _inherits(CardPointeTokenizer, _Component);
+var App = /*#__PURE__*/function (_Component) {
+  _inherits(App, _Component);
 
-  var _super = _createSuper(CardPointeTokenizer);
+  var _super = _createSuper(App);
 
-  function CardPointeTokenizer(props) {
+  function App(props) {
     var _this;
 
-    _classCallCheck(this, CardPointeTokenizer);
+    _classCallCheck(this, App);
 
     _this = _super.call(this, props);
 
@@ -85,7 +85,7 @@ var CardPointeTokenizer = /*#__PURE__*/function (_Component) {
     return _this;
   }
 
-  _createClass(CardPointeTokenizer, [{
+  _createClass(App, [{
     key: "renderTokenizerUi",
     value: function renderTokenizerUi() {
       var url = "https://".concat(this.props.site, ".cardconnect.com:").concat(this.props.port, "/itoke/ajax-tokenizer.html"); // #ccnumfield #cccvvfield #ccexpiryyear #ccexpirymonth {}
@@ -149,10 +149,10 @@ var CardPointeTokenizer = /*#__PURE__*/function (_Component) {
     }
   }]);
 
-  return CardPointeTokenizer;
+  return App;
 }(_react.Component);
 
-exports.default = CardPointeTokenizer;
+exports.default = App;
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -207,7 +207,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 require("./NativeStackTokenizer.css");
 
-var _App = _interopRequireDefault(require("./App"));
+var _App = _interopRequireDefault(require("./App.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
