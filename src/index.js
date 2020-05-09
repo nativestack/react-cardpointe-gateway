@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./NativeStackTokenizer.css";
-import CardPointeTokenizer from "./components/CardPointeTokenizer";
+import CardPointeTokenizer from "./App";
 
 class NativeStackTokenizer extends Component {
   constructor(props) {

@@ -1,22 +1,5 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@testing-library/react");
-
-var _App = _interopRequireDefault(require("./App"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-test('renders learn react link', function () {
-  var _render = (0, _react2.render)( /*#__PURE__*/_react.default.createElement(_App.default, null)),
-      getByText = _render.getByText;
-
-  var linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
-"use strict";
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -172,6 +155,23 @@ var CardPointeTokenizer = /*#__PURE__*/function (_Component) {
 exports.default = CardPointeTokenizer;
 "use strict";
 
+var _react = _interopRequireDefault(require("react"));
+
+var _react2 = require("@testing-library/react");
+
+var _App = _interopRequireDefault(require("./App"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+test('renders learn react link', function () {
+  var _render = (0, _react2.render)( /*#__PURE__*/_react.default.createElement(_App.default, null)),
+      getByText = _render.getByText;
+
+  var linkElement = getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+"use strict";
+
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var _react = _interopRequireDefault(require("react"));
@@ -207,7 +207,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 require("./NativeStackTokenizer.css");
 
-var _CardPointeTokenizer = _interopRequireDefault(require("./components/CardPointeTokenizer"));
+var _App = _interopRequireDefault(require("./App"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -309,7 +309,7 @@ var NativeStackTokenizer = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "App"
-      }, /*#__PURE__*/_react.default.createElement(_CardPointeTokenizer.default, {
+      }, /*#__PURE__*/_react.default.createElement(_App.default, {
         site: this.props.site,
         port: this.props.port,
         tokenProps: tokenProps
