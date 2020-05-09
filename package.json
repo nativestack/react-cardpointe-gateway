@@ -27,7 +27,8 @@
   "homepage": "https://github.com/nativestack/react-cardpointe-gateway#readme",
   "babel": {
     "presets": [
-      "@babel/preset-react"
+      "@babel/preset-react",
+      "@babel/env"
     ],
     "plugins": [
       "@babel/plugin-proposal-class-properties"
