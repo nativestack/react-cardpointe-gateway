@@ -2,9 +2,14 @@
 
 **Authored By: [NativeStack Engineering](https://www.upwork.com/ag/nativestack/)**
 
-## Product Under Development and Not Live
+## Product Under Development and Being Tested
 
 We are working with CardConnect to provide a fully customizeable and PCI compliant solution for modern web frameworks. We did not expect this package to be as popular as it turned out to be. We are still testing the features in this package and working to make it compatible across as many different platforms as possible. Please contact us at **(628) 400 2701** or email us at **Support@NativeStack.io** for help implementing this service into your project until we have ths package ready.
+
+### Changelog & Updates
+
+-   Sunday 10 May 2020: Full hosted iFrame react component is working with a working example application `</App>`. Needs additional props to set additional CardPointe Hosted iFrame Configurations. The component returns a **token** and an **expiration date**.
+-   Initial deployments not working or tested.
 
 CardConnect's CardPointe Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
 
@@ -21,9 +26,7 @@ This module requires [`react-bootstrap` v^1.0.0-beta.12 as a _peer dependancy_](
 In the example `<App />` included in the package we first implement the following imports:
 
 ```
-import Form from 'react-bootstrap/Form'
-import Container from 'react-bootstrap/Container'
-import { NativeStackTokenizer } from 'react-cardpointe-gateway'
+import NativeStackTokenizer from 'react-cardpointe-gateway'
 ```
 
 In the `constructor` of the parent component with the implementation of the component, declare a state attribute as such:
@@ -37,11 +40,10 @@ constructor(props) {
 }
 ```
 
-Next implement a `componentDidUpdate()` function as such:
+Next implement a `componentDidUpdate()` function as such, IF & ONLY IF you will are nesting this implementation into a parent component that needs to process the token in state. You will need to recursively pass the `userEmvData()` function and the assoicated `tokenProps` object as shown below to recursively pass the value up through `props` and into the state of its parent component.
 
 ```
 componentDidUpdate() {
-	console.log('This is the TokenData: ', this.state.emvData)
 	/* NOTE: This is the function passed into props
 	 *
 	 *       This will send token data back to Parent component
@@ -56,12 +58,13 @@ componentDidUpdate() {
 				this.props.tokenProps.userEmvData(this.state.emvData)
 			} catch (err) {
 				console.log('UPDATING CARD')
+				console.log('This is your NativeStackToken: ', this.state.emvData)
 			}
 	*/
 }
 ```
 
-Next, implement this function in your parent component to be used by the `react-cardpointe-gateway` tokenizer. This needs to go in the same file where you will call your component from.
+Next, implement this function in your parent component where this component will be nested to be used by the `react-cardpointe-gateway` tokenizer. This needs to go in the same file where you will call this component from.
 
 ```
 /* NOTE:
@@ -78,7 +81,7 @@ userEmvData = (emvData) => {
 };
 ```
 
-The `render` function in your parent component needs to declare an object that will be used to pass the authentication data needed by the payment gateway to tokenize any credit card securely and in compliance with PCI with an implementation like the example below:
+The `render` function in your parent component needs to declare a `tokenProps` object that will be used to pass the token data needed by the payment gateway to authorize and capture a transaction with any credit card securely and in compliance with PCI. You will need this tokenized `emvData` to make your `/auth` and `/capture` API calls to [**CardPoint's CardConnect API**](https://developer.cardconnect.com/cardconnect-api) to capture your transactions after securely tokenizing your user's credit card with an implementation like the example below:
 
 ```
 render() {
@@ -98,23 +101,14 @@ render() {
 	*       the function in parent component.
 	*/
 	return (
-		<Container className='payments'>
-			{/* Start Form for step 1 here!! */}
-			{/* onSubmit={ this.handleSubmit } */}
-			<Form className='form-renewals' method='post'>
-				{/* This is the Number FG */}
-				<Form.Group
-					controlId='tokenEvent'
-					className='billing-group'
-				>
-					<NativeStackTokenizer
-						site='fts'
-						port='6443'
-						tokenProps={tokenProps}
-					/>
-				</Form.Group>
-			</Form>
-		</Container>
+		<div className='native-stack-payments'>
+
+			<NativeStackTokenizer
+				site='fts'
+				port='6443'
+				tokenProps={tokenProps}
+			/>
+		</div>
 	);
 }
 ```

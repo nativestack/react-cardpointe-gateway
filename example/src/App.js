@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Form from 'react-bootstrap/Form'
-import Container from 'react-bootstrap/Container'
 import NativeStackTokenizer from 'react-cardpointe-gateway'
 import 'react-cardpointe-gateway/dist/index.css'
 
@@ -14,8 +12,6 @@ export default class App extends Component {
 	}
 
 	componentDidUpdate() {
-		console.log('This is the TokenData: ', this.state.emvData)
-
 		/* NOTE: This is the function passed into props
 		 *
 		 *       This will send token data back to Parent component
@@ -66,23 +62,13 @@ export default class App extends Component {
 		 */
 
 		return (
-			<Container className='payments'>
-				{/* Start Form for step 1 here!! */}
-				{/* onSubmit={ this.handleSubmit } */}
-				<Form className='form-renewals' method='post'>
-					{/* This is the Number FG */}
-					<Form.Group
-						controlId='tokenEvent'
-						className='billing-group'
-					>
-						<NativeStackTokenizer
-							site='fts'
-							port='6443'
-							tokenProps={tokenProps}
-						/>
-					</Form.Group>
-				</Form>
-			</Container>
+			<div className='native-stack-payments'>
+				<NativeStackTokenizer
+					site='fts'
+					port='6443'
+					tokenProps={tokenProps}
+				/>
+			</div>
 		)
 	}
 }

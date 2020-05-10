@@ -12,7 +12,7 @@ export default class NativeStackTokenizer extends Component {
 	}
 
 	componentDidUpdate() {
-		console.log('This is the TokenData: ', this.state.emvData)
+		//console.log('This is the TokenData: ', this.state.emvData)
 		/* NOTE: This is the function passed into props
 		 *
 		 *       This will send token data back to Parent component
@@ -20,9 +20,12 @@ export default class NativeStackTokenizer extends Component {
 		 *       @return {token: "9418594164541111", expiryDate: "202312"}
 		 */
 		try {
-			this.props.tokenProps.userEmvData(this.state.emvData)
+			if (this.state.emvData.token.length === 16) {
+				this.props.tokenProps.userEmvData(this.state.emvData)
+			}
 		} catch (err) {
-			console.log('UPDATING CARD')
+			console.log('TOKENIZING CARD WITH NATIVESTACK ENGINEERING')
+			console.log('This is your NativeStackToken: ', this.state.emvData)
 		}
 	}
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
-import './CardPointeTokenizer.css'
+import styles from './styles.module.css'
 
 export default class CardPointeTokenizer extends Component {
 	constructor(props) {
@@ -65,7 +65,7 @@ export default class CardPointeTokenizer extends Component {
 		const iFrameUrl = url + encodeURI(cssStyle) + '&' + params
 
 		return (
-			<Container className='payments'>
+			<Container className={styles.native_stack_payments}>
 				{/* Start Form for step 1 here!! */}
 				{/* onSubmit={ this.handleSubmit } */}
 				<Form
@@ -77,7 +77,7 @@ export default class CardPointeTokenizer extends Component {
 					{/* This is the Number FG */}
 					<Form.Group
 						controlId='tokenEvent'
-						className='billing-group'
+						className={styles.billing_group}
 					>
 						<iframe
 							title='CardPointeTokenizer'
