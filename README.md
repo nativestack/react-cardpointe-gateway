@@ -6,13 +6,14 @@
 
 CardConnect's Hosted iFrame Tokenizer solution captures code (HTML, JavaScript, and Java) associated with a CardSecure token value of a credit number within an iFrame. Per the Payment Card Industry (PCI) Data Security Standards, a merchant's PCI compliance requirements are reduced when encasing token functionality in an iFrame hosted by CardSecure.
 
-## Product Under Development and Being Tested
+## Product in Testing
 
-We are working with CardConnect to provide a fully customizeable and PCI compliant solution for modern web frameworks. We did not expect this package to be as popular as it turned out to be. We are still testing the features in this package and working to make it compatible across as many different platforms as possible. Please contact us at **(628) 400 2701** or email us at **Support@NativeStack.io** for help implementing this service into your project until we have ths package ready.
+We are working with CardConnect to provide a fully customizeable and PCI compliant solution for modern web frameworks. We did not expect this package to be as popular as it turned out to be this early on. We are currently testing the features in this package and working to make it compatible across as many different frameworks as possible. Please contact us at **(628) 400 2701** or email us at **Support@NativeStack.io** for help implementing this service into your project until we have this package ready.
 
 ### Changelog & Updates
 
--   Sunday 10 May 2020: Full hosted iFrame react component is working with a working example application `</App>`. Needs additional props to set additional CardPointe Hosted iFrame Configurations. The component returns a **token** and an **expiration date**.
+-   Sunday 10 May 2020 v1.4.4: [CardConnect Hosted iFrame **Optional Parameters**](https://developer.cardconnect.com/hosted-iframe-tokenizer#optional-parameters) can be passed into the component as `tokenProps` to append to the `url` used in the request to obtain the secure tokenizer. [See the complete list of Supported Optional Parameters](#Supported)
+-   Sunday 10 May 2020 v1.4.2: Fully hosted iFrame react component is working with a working example application `</App>`. Needs additional props to set additional CardPointe Hosted iFrame Configurations. The component returns a **token** and an **expiration date**.
 -   Saturday 9 May 2020: Initial deployments not working or tested.
 
 ## Installation
@@ -127,7 +128,7 @@ render() {
 		<div className='native-stack-payments'>
 
 			<NativeStackTokenizer
-				site='fts'
+				site='fts-uat'
 				port='6443'
 				tokenProps={tokenProps}
 			/>
