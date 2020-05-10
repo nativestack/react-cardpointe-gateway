@@ -44,7 +44,7 @@ constructor(props) {
 }
 ```
 
-Next implement a `componentDidUpdate()` function as such, IF & ONLY IF you will are nesting this implementation into a parent component that needs to process the token in state. You will need to recursively pass the `userEmvData()` function and the assoicated `tokenProps` object as shown below to recursively pass the value up through `props` and into the state of its parent component.
+Next implement a `componentDidUpdate()` function as such, IF & ONLY IF you are nesting this implementation into a parent component that needs to process the token in state. You will need to recursively pass the `userEmvData()` function and the assoicated `tokenProps` object as shown below to recursively pass the value up through `props` and into the state of its parent component.
 
 ```
 componentDidUpdate() {
