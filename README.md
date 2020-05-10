@@ -17,7 +17,7 @@ We are working with CardConnect to provide a fully customizeable and PCI complia
 
 `npm install react-cardpointe-gateway`
 
-### Implementation
+## Implementation
 
 This module requires [`react-bootstrap` v^1.0.0-beta.12 as a _peer dependancy_](https://react-bootstrap.netlify.app). You can install the version needed after reviewing the doc with:
 
@@ -113,12 +113,12 @@ render() {
 }
 ```
 
-### License
+## License
 
-**IPA**
+[**IPA**](https://opensource.org/licenses/IPA)
 
 **Contact: Support@NativeStack.io**
 
-#### Keywords
+### Keywords
 
 payments, merchant-account, emv-token, react, card-pointe, native-stack, card-secure, card-connect, credit-cards, pci-compliant
