@@ -2,6 +2,10 @@
 
 **Authored By: [NativeStack Engineering](https://www.upwork.com/ag/nativestack/)**
 
+## Product Under Development and Not Live
+
+We are working with CardConnect to provide a fully customizeable and PCI compliant solution for modern web frameworks. We did not expect this package to be as popular as it turned out to be. We are still testing the features in this package and working to make it compatible across as many different platforms as possible. Please contact us at **(628) 400 2701** or email us at **Support@NativeStack.io** for help implementing this service into your project until we have ths package ready.
+
 CardConnect's CardPointe Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
 
 ## Installation
