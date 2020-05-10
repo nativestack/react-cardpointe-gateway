@@ -168,6 +168,10 @@ You can test the example `</App>` located in the `/example` directory of the pac
 
 -   Step 6: Proceed to `$ npm start` the example and open a browser to `localhost:3000` to see the PCI Compliant iFrame in action!
 
+### Example Output PCI Compliant Tokenizer
+
+![alt text](https://github.com/nativestack/react-cardpointe-gateway/blob/master/img/react-cardpointe-gateway-example.png 'NativeStack Engineering!')
+
 ## License
 
 [**IPA**](https://opensource.org/licenses/IPA)
