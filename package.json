@@ -3,7 +3,7 @@
     "version": "1.5.3",
     "description": "CardConnect Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe on React.js.",
     "author": "NativeStack Engineering",
-    "license": "IPA",
+    "license": "GPL-3.0-or-later",
     "keywords": [
         "payments",
         "merchant-account",
