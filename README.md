@@ -25,7 +25,7 @@ We are working with CardConnect to provide a fully customizeable and PCI complia
 
 This module requires [`react-bootstrap@v^1.0.0-beta.12` as a _peer dependancy_](https://react-bootstrap.netlify.app). You can install the version needed after reviewing the doc with:
 
-`npm install react-bootstrap@1.0.0-beta.12`
+`npm install react-bootstrap@1.0.0-beta.12` (minimum version required)
 
 In the example `<App />` included in the package we first implement the following imports:
 
@@ -173,6 +173,14 @@ You can test the example `</App>` located in the `/example` directory of the pac
 
 ![](https://github.com/nativestack/react-cardpointe-gateway/blob/master/img/react-cardpointe-gateway-example.png?raw=true)
 
+## Features Coming Soon
+
+-   Custom CSS Styling
+
+-   Authorization & Capture of Transactions
+
+-   Merchant Backend & UI to Void, Refund, & monitor transactions in _real-time_
+
 ## License
 
 **react-cardpointe-gateway** npm component
@@ -190,7 +198,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 ## Support OpenSource
 
-If you can appreciate this project and would like to support OpenSource work with NativeStack Engineering and you would like to apply for a simple merchant account with rates of [**IC+ 2% Discount Rate & Only \$0.25 per Transaction**](https://apply.cardpointe.com/u2cd5), then do not hesitate to [apply with NativeStack Engineering](https://apply.cardpointe.com/u2cd5). All proceeds support the research and funding of more OpenSource work we plan on deploying to automate your business workflow to help you focus on what matters most to you.
+If you can appreciate this project and would like to support OpenSource work with NativeStack Engineering, and you would like to apply for a simple merchant account with rates of [**2% IC+ Discount Rates and \$0.25 per Transaction**](https://apply.cardpointe.com/u2cd5), then do not hesitate to [apply with NativeStack Engineering](https://apply.cardpointe.com/u2cd5). All proceeds support the research and funding of more OpenSource work we plan on deploying to automate your business workflow, and to help you focus on what matters most to you.
 
 All approved merchants have access to [**24/7 Phone Technical Support**](https://apply.cardpointe.com/u2cd5) along with direct access to all unreleased tools and software available to our in house teams.
 
@@ -198,7 +206,7 @@ Let us help you take your business online; adapt and overcome to the changing co
 
 # [Apply Now for a New CardPointe Merchant Account & Support NativeStack Engineering](https://apply.cardpointe.com/u2cd5)
 
-We're eventually going to build Moon lander to [mine the moon of all of its HeO3](https://oilprice.com/Energy/Energy-General/Lunar-Drilling-The-Resource-Race-For-The-Moon-Is-On.html) using something similar to what [NASA used with the Morpheus Project & its AlHat Laser Guidance System](https://www.youtube.com/watch?v=i-BY6xH2WYw). It should work out better for us; more than likely we'll get into _Payments for Commercial Space Merchants_. Don't donate! Build and innovate with us as a merchant partner on our network.
+We're eventually going to build a Moon lander to [mine the moon of all of its HeO3](https://oilprice.com/Energy/Energy-General/Lunar-Drilling-The-Resource-Race-For-The-Moon-Is-On.html) using something similar to what [NASA used with the Morpheus Project & its AlHat Laser Guidance System](https://www.youtube.com/watch?v=i-BY6xH2WYw). It should work out better for us; more than likely we'll get into _Payments for Commercial Space Merchants_. [Don't donate!](https://apply.cardpointe.com/u2cd5) Build and innovate with us as a merchant partner on our network.
 
 ## Keywords
 
