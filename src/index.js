@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import "./NativeStackTokenizer.css";
-import CardPointeTokenizer from "./CardPointeTokenizer";
+import React, { Component } from 'react'
+import styles from './styles.module.css'
+import CardPointeTokenizer from './CardPointeTokenizer'
 
 class NativeStackTokenizer extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     // NOTE: Parent must have emvData object
     this.state = {
-      emvData: "",
-    };
+      emvData: ''
+    }
   }
 
   componentDidUpdate() {
-    console.log("This is the TokenData: ", this.state.emvData);
+    console.log('This is the TokenData: ', this.state.emvData)
     /* NOTE: This is the function passed into props
      *
      *       This will send token data back to Parent component
@@ -20,9 +20,9 @@ class NativeStackTokenizer extends Component {
      *       @return {token: "9418594164541111", expiryDate: "202312"}
      */
     try {
-      this.props.tokenProps.userEmvData(this.state.emvData);
+      this.props.tokenProps.userEmvData(this.state.emvData)
     } catch (err) {
-      console.log("UPDATING CARD");
+      console.log('UPDATING CARD')
     }
   }
 
@@ -35,9 +35,9 @@ class NativeStackTokenizer extends Component {
    */
   userEmvData = (emvData) => {
     this.setState({
-      emvData: emvData,
-    });
-  };
+      emvData: emvData
+    })
+  }
 
   render() {
     /* NOTE:
@@ -48,8 +48,8 @@ class NativeStackTokenizer extends Component {
      */
     const tokenProps = {
       // below is token info
-      userEmvData: this.userEmvData,
-    };
+      userEmvData: this.userEmvData
+    }
 
     /*
      * NOTE: User has to pass tokenProps into props
@@ -57,15 +57,15 @@ class NativeStackTokenizer extends Component {
      *       the function in parent component.
      */
     return (
-      <div className="App">
+      <div className='App'>
         <App
           site={this.props.site}
           port={this.props.port}
           tokenProps={tokenProps}
         />
       </div>
-    );
+    )
   }
 }
 
-export default NativeStackTokenizer;
+export default NativeStackTokenizer
