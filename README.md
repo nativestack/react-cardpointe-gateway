@@ -152,7 +152,7 @@ render() {
 | enhancedresponse      |  bool  | If true, the following additional parameters will be included in the JSON response after a tokenization attempt: <ul><li> token - the token if tokenization was successful, otherwise an empty string</li><li>errorMessage - the error message from CardSecure on tokenization failure; otherwise, an empty string.</li><li> errorCode - one of the following:</li><ol><li>The error code from CardSecure on tokenization failure</li><li>A custom iFrame Tokenizer error code</li><li>'0' if no error occurred</li></ol></ul>                                                                                                                                           |
 | formatinput           |  bool  | Styles the card number to be separated every four numbers so the number is easily read as the user types into the field.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
-## Test the Example </App>
+## Test the Example `</NativeStack Tokenizer>` Component
 
 You can test the example `</App>` located in the `/example` directory of the package. You need to first `clone` the [repository](https://github.com/nativestack/react-cardpointe-gateway) and run the project to see the output locally as follows:
 
@@ -170,7 +170,7 @@ You can test the example `</App>` located in the `/example` directory of the pac
 
 ### Example Output PCI Compliant Tokenizer
 
-![alt text](https://github.com/nativestack/react-cardpointe-gateway/blob/master/img/react-cardpointe-gateway-example.png 'NativeStack Engineering!')
+![](https://github.com/nativestack/react-cardpointe-gateway/blob/master/img/react-cardpointe-gateway-example.png?raw=true)
 
 ## License
 
