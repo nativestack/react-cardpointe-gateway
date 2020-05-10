@@ -1,6 +1,6 @@
 # CardPointe Gateway Tokenizer for React.js
 
-**Authored By: [NativeStack Engineering](https://www.upwork.com/ag/nativestack/)**
+**Authored By: NativeStack Engineering**
 
 [CardConnect's CardPointe Hosted iFrame Tokenizer](https://developer.cardconnect.com/hosted-iframe-tokenizer) & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
 
@@ -186,7 +186,9 @@ All approved merchants have access to [**24/7 Phone Technical Support**](https:/
 
 Let us help you take your business online; adapt and overcome to the changing conditions with [NativeStack Payments](https://apply.cardpointe.com/u2cd5).
 
-# [Apply Now for a New CardPointe Merchant Account](https://apply.cardpointe.com/u2cd5)
+# [Apply Now for a New CardPointe Merchant Account & Support NativeStack Engineering](https://apply.cardpointe.com/u2cd5)
+
+We're eventually going to build Moon lander to [mine the moon of all of its HeO3](https://oilprice.com/Energy/Energy-General/Lunar-Drilling-The-Resource-Race-For-The-Moon-Is-On.html) using something similar to what [NASA used with the Morpheus Project & its AlHat Laser Guidance System](https://www.youtube.com/watch?v=i-BY6xH2WYw). It should work out better for us; more than likely we'll get into _Payments for Commercial Space Merchants_. Don't donate! Build and innovate with us as a merchant partner on our network.
 
 ## Keywords
 
