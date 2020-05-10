@@ -51,7 +51,17 @@ export default class NativeStackTokenizer extends Component {
 		 */
 		const tokenProps = {
 			// below is token info
-			userEmvData: this.userEmvData
+			userEmvData: this.userEmvData,
+			maskfirsttwo: this.props.tokenProps.maskfirsttwo,
+			useexpiry: this.props.tokenProps.useexpiry,
+			usemonthnames: this.props.tokenProps.usemonthnames,
+			usecvv: this.props.tokenProps.usecvv,
+			cardnumbernumericonly: this.props.tokenProps.cardnumbernumericonly,
+			orientation: this.props.tokenProps.orientation,
+			invalidinputevent: this.props.tokenProps.invalidinputevent,
+			tokenizewheninactive: this.props.tokenProps.tokenizewheninactive,
+			enhancedresponse: this.props.tokenProps.enhancedresponse,
+			formatinput: this.props.tokenProps.formatinput
 		}
 
 		/*

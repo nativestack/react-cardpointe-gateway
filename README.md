@@ -2,7 +2,9 @@
 
 **Authored By: [NativeStack Engineering](https://www.upwork.com/ag/nativestack/)**
 
-CardConnect's CardPointe Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
+[CardConnect's CardPointe Hosted iFrame Tokenizer](https://developer.cardconnect.com/hosted-iframe-tokenizer) & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
+
+CardConnect's Hosted iFrame Tokenizer solution captures code (HTML, JavaScript, and Java) associated with a CardSecure token value of a credit number within an iFrame. Per the Payment Card Industry (PCI) Data Security Standards, a merchant's PCI compliance requirements are reduced when encasing token functionality in an iFrame hosted by CardSecure.
 
 ## Product Under Development and Being Tested
 
@@ -33,7 +35,9 @@ In the `constructor` of the parent component with the implementation of the comp
 
 ```
 constructor(props) {
+
 	super(props);
+
     this.state = {
     	emvData: ""
     };
@@ -44,16 +48,19 @@ Next implement a `componentDidUpdate()` function as such, IF & ONLY IF you will 
 
 ```
 componentDidUpdate() {
+
 	/* NOTE: This is the function passed into props
 	 *
 	 *       This will send token data back to Parent component
 	 *
 	 *       @return {token: "9418594164541111", expiryDate: "202312"}
 	 */
+
 	/*
 		Use this function if you will embed this component as a child into
 		a parent component so you can recursively send the emvData in state
 		back up into the parent component where this component will reside.
+
 			try {
 				this.props.tokenProps.userEmvData(this.state.emvData)
 			} catch (err) {
@@ -74,6 +81,7 @@ Next, implement this function in your parent component where this component will
  * to pass emvData returned from child into
  * state.
  */
+
 userEmvData = (emvData) => {
 	this.setState({
 		emvData: emvData,
@@ -81,7 +89,9 @@ userEmvData = (emvData) => {
 };
 ```
 
-The `render` function in your parent component needs to declare a `tokenProps` object that will be used to pass the token data needed by the payment gateway to authorize and capture a transaction with any credit card securely and in compliance with PCI. You will need this tokenized `emvData` to make your `/auth` and `/capture` API calls to [**CardPoint's CardConnect API**](https://developer.cardconnect.com/cardconnect-api) to capture your transactions after securely tokenizing your user's credit card with an implementation like the example below:
+The `render` function in your parent component needs to declare a `tokenProps` object that will be used to pass the token data needed by the payment gateway to authorize and capture a transaction with any credit card securely and in compliance with PCI. You will need this tokenized `emvData` to make your `/auth` and `/capture` API calls to [**CardPoint's CardConnect API**](https://developer.cardconnect.com/cardconnect-api) to capture your transactions after securely tokenizing your user's credit card with an implementation like the example below.
+
+You must implement the [CardConnect Hosted iFrame Tokenizer](https://developer.cardconnect.com/hosted-iframe-tokenizer) options you want to support in your implementations of this component. Add the options to your `tokenProps` object as shown in the example below:
 
 ```
 render() {
@@ -91,15 +101,28 @@ render() {
 	* in render function to pass userEmvData
 	* function into child component props.
 	*/
+
 	const tokenProps = {
 		// below is token info
 		userEmvData: this.userEmvData,
-	};
+		maskfirsttwo: true,
+		useexpiry: true,
+		usemonthnames: true,
+		usecvv: true,
+		cardnumbernumericonly: true,
+		orientation: 'horizontal',
+		invalidinputevent: true,
+		tokenizewheninactive: true,
+		enhancedresponse: true,
+		formatinput: true
+	}
+
 	/*
 	* NOTE: User has to pass tokenProps into props
 	*       for child component to allow this to access
 	*       the function in parent component.
 	*/
+
 	return (
 		<div className='native-stack-payments'>
 
@@ -112,6 +135,21 @@ render() {
 	);
 }
 ```
+
+### Supported Optional Parameters
+
+| Parameter             |  Type  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| :-------------------- | :----: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| maskfirsttwo          |  bool  | If true, the first 2 digits of the card number are masked.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| useexpiry             |  bool  | If true, includes two drop-down selectors to specify the expiration month (MM) and Year (YYYY).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| usemonthnames         |  bool  | If true, displays Month names instead of numbers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| usecvv                |  bool  | If true, includes a field to enter the Cardholder Verification Value (CVV). **Notes**: <ul> <li>If usecvv is true, the CVV must be provided to initiate the tokenization request.</li> <li>If CVV is not masked. This value remains in clear text. </li> </ul>                                                                                                                                                                                                                                                                                                                                                                                                           |
+| cardnumbernumericonly |  bool  | If true, the card number field ignores non-numeric values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| orientation           | string | Controls the orientation of the elements within the iFrame. **Supported values are**: <ul><li>default - the default orientation, used if no value is passed for this parameter.</li><li>horizontal</li><li>vertical</li><li>custom </li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| invalidinputevent     |  bool  | If true, a `message` event will be sent to the parent page when the iFrame determines that the card number is invalid (for example, if it fails the **luhn** check). The `data` property in the event will contain an empty string and a `validationError` property will contain a description of the validation failure. An example of how this event can be used is available at the following url: [https://fts-uat.cardconnect.com/itoke/outer-page-validation.html](https://fts-uat.cardconnect.com/itoke/outer-page-validation.html).                                                                                                                              |
+| tokenizewheninactive  |  bool  | **Note**: This parameter should be used for mobile implementations. Validation and tokenization for manual input is normally performed when an onBlur event occurs on the input field (for example, when the user clicks/tabs to the next field in the form). If `tokenizewheninactive` is set to true, validation and tokenization will be performed once the input field stops receiving input from the user. This inactivity duration is configurable through the `inactivityto` parameter. Note that the onBlur event will not be used at all if `tokenizewheninactive` is set to true and that `inactivityto` is also used to determine when a swipe has completed. |
+| enhancedresponse      |  bool  | If true, the following additional parameters will be included in the JSON response after a tokenization attempt: <ul><li> token - the token if tokenization was successful, otherwise an empty string</li><li>errorMessage - the error message from CardSecure on tokenization failure; otherwise, an empty string.</li><li> errorCode - one of the following:</li><ol><li>The error code from CardSecure on tokenization failure</li><li>A custom iFrame Tokenizer error code</li><li>'0' if no error occurred</li></ol></ul>                                                                                                                                           |
+| formatinput           |  bool  | Styles the card number to be separated every four numbers so the number is easily read as the user types into the field.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## License
 

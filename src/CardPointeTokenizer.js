@@ -50,16 +50,16 @@ export default class CardPointeTokenizer extends Component {
 			'?css=.error{color:red;border-color:red;}input{font-size:18px;height:22px;border-radius:3px;margin-bottom:20px;}select{height:55px;}label{font-family:sans-serif;}.ccnumfield{width:100%}'
 
 		const params = new URLSearchParams({
-			maskfirsttwo: true,
-			useexpiry: true,
-			usemonthnames: true,
-			usecvv: true,
-			cardnumbernumericonly: true,
-			orientation: 'horizontal',
-			invalidinputevent: true,
-			tokenizewheninactive: true,
-			enhancedresponse: true,
-			formatinput: true
+			maskfirsttwo: this.props.tokenProps.maskfirsttwo,
+			useexpiry: this.props.tokenProps.useexpiry,
+			usemonthnames: this.props.tokenProps.usemonthnames,
+			usecvv: this.props.tokenProps.usecvv,
+			cardnumbernumericonly: this.props.tokenProps.cardnumbernumericonly,
+			orientation: this.props.tokenProps.orientation,
+			invalidinputevent: this.props.tokenProps.invalidinputevent,
+			tokenizewheninactive: this.props.tokenProps.tokenizewheninactive,
+			enhancedresponse: this.props.tokenProps.enhancedresponse,
+			formatinput: this.props.tokenProps.formatinput
 		})
 
 		const iFrameUrl = url + encodeURI(cssStyle) + '&' + params

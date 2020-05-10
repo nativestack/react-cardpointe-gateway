@@ -49,10 +49,21 @@ export default class App extends Component {
 		 * Parent component must declare tokenProps
 		 * in render function to pass userEmvData
 		 * function into child component props.
+
 		 */
 		const tokenProps = {
 			// below is token info
-			userEmvData: this.userEmvData
+			userEmvData: this.userEmvData,
+			maskfirsttwo: true,
+			useexpiry: true,
+			usemonthnames: true,
+			usecvv: true,
+			cardnumbernumericonly: true,
+			orientation: 'horizontal',
+			invalidinputevent: true,
+			tokenizewheninactive: true,
+			enhancedresponse: true,
+			formatinput: true
 		}
 
 		/*
@@ -64,7 +75,7 @@ export default class App extends Component {
 		return (
 			<div className='native-stack-payments'>
 				<NativeStackTokenizer
-					site='fts'
+					site='fts-uat'
 					port='6443'
 					tokenProps={tokenProps}
 				/>
