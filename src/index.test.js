@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { NativeStackTokenizer } from '.'
 
-describe('ExampleComponent', () => {
-  it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
-  })
+describe('NativeStackTokenizer', () => {
+	it('is truthy', () => {
+		expect(NativeStackTokenizer).toBeTruthy()
+	})
 })

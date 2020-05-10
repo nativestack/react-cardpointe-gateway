@@ -75,7 +75,10 @@ export default class CardPointeTokenizer extends Component {
 					id='tokenform'
 				>
 					{/* This is the Number FG */}
-					<Form.Group controlId='tokenEvent' className='billing-group'>
+					<Form.Group
+						controlId='tokenEvent'
+						className='billing-group'
+					>
 						<iframe
 							title='CardPointeTokenizer'
 							id='tokenframe'
@@ -104,6 +107,10 @@ export default class CardPointeTokenizer extends Component {
 	}
 
 	render() {
-		return <div className='cardpointe-tokenizer-view'>{this.renderForms()}</div>
+		return (
+			<div className='cardpointe-tokenizer-view'>
+				{this.renderForms()}
+			</div>
+		)
 	}
 }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
-import { NativeStackTokenizer } from 'react-cardpointe-gateway'
+import NativeStackTokenizer from 'react-cardpointe-gateway'
 import 'react-cardpointe-gateway/dist/index.css'
 
-class App extends Component {
+export default class App extends Component {
 	constructor(props) {
 		super(props)
 		// NOTE: Parent must have emvData object
@@ -86,5 +86,3 @@ class App extends Component {
 		)
 	}
 }
-
-export default App

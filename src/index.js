@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './styles.module.css'
 import CardPointeTokenizer from './CardPointeTokenizer'
 
-class NativeStackTokenizer extends Component {
+export default class NativeStackTokenizer extends Component {
 	constructor(props) {
 		super(props)
 		// NOTE: Parent must have emvData object
@@ -67,5 +67,3 @@ class NativeStackTokenizer extends Component {
 		)
 	}
 }
-
-export default NativeStackTokenizer
