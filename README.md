@@ -12,7 +12,7 @@ We are working with CardConnect to provide a fully customizeable and PCI complia
 
 ### Changelog & Updates
 
--   Sunday 10 May 2020 v1.4.4: [CardConnect Hosted iFrame **Optional Parameters**](https://developer.cardconnect.com/hosted-iframe-tokenizer#optional-parameters) can be passed into the component as `tokenProps` to append to the `url` used in the request to obtain the secure tokenizer. [See the complete list of Supported Optional Parameters](#Supported)
+-   Sunday 10 May 2020 v1.4.4: [CardConnect Hosted iFrame **Optional Parameters**](https://developer.cardconnect.com/hosted-iframe-tokenizer#optional-parameters) can be passed into the component as `tokenProps` to append to the `url` used in the request to obtain the secure tokenizer. [See the complete list of Supported Optional Parameters](#supported-optional-parameters)
 -   Sunday 10 May 2020 v1.4.2: Fully hosted iFrame react component is working with a working example application `</App>`. Needs additional props to set additional CardPointe Hosted iFrame Configurations. The component returns a **token** and an **expiration date**.
 -   Saturday 9 May 2020: Initial deployments not working or tested.
 
@@ -22,7 +22,7 @@ We are working with CardConnect to provide a fully customizeable and PCI complia
 
 ## Implementation
 
-This module requires [`react-bootstrap` v^1.0.0-beta.12 as a _peer dependancy_](https://react-bootstrap.netlify.app). You can install the version needed after reviewing the doc with:
+This module requires [`react-bootstrap@v^1.0.0-beta.12` as a _peer dependancy_](https://react-bootstrap.netlify.app). You can install the version needed after reviewing the doc with:
 
 `npm install react-bootstrap@1.0.0-beta.12`
 
@@ -151,6 +151,22 @@ render() {
 | tokenizewheninactive  |  bool  | **Note**: This parameter should be used for mobile implementations. Validation and tokenization for manual input is normally performed when an onBlur event occurs on the input field (for example, when the user clicks/tabs to the next field in the form). If `tokenizewheninactive` is set to true, validation and tokenization will be performed once the input field stops receiving input from the user. This inactivity duration is configurable through the `inactivityto` parameter. Note that the onBlur event will not be used at all if `tokenizewheninactive` is set to true and that `inactivityto` is also used to determine when a swipe has completed. |
 | enhancedresponse      |  bool  | If true, the following additional parameters will be included in the JSON response after a tokenization attempt: <ul><li> token - the token if tokenization was successful, otherwise an empty string</li><li>errorMessage - the error message from CardSecure on tokenization failure; otherwise, an empty string.</li><li> errorCode - one of the following:</li><ol><li>The error code from CardSecure on tokenization failure</li><li>A custom iFrame Tokenizer error code</li><li>'0' if no error occurred</li></ol></ul>                                                                                                                                           |
 | formatinput           |  bool  | Styles the card number to be separated every four numbers so the number is easily read as the user types into the field.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+## Test the Example </App>
+
+You can test the example `</App>` located in the `/example` directory of the package. You need to first `clone` the [repository](https://github.com/nativestack/react-cardpointe-gateway) and run the project to see the output locally as follows:
+
+-   Step 1: `$ git clone git@github.com:nativestack/react-cardpointe-gateway.git`
+
+-   Step 2: From the `root` directory of the package and `$ npm install` the project `dev-dependencies`.
+
+-   Step 3: You need to install a `peer-dependancy` with `npm install react-bootstrap@1.0.0-beta.12`
+
+-   Step 4: From the `root` project directory and `$npm start` the project.
+
+-   Step 5: Open a second terminal, navigate into `$ cd react-cardpoint-gateway/example` and run `$ npm install`
+
+-   Step 6: Proceed to `$ npm start` the example and open a browser to `localhost:3000` to see the PCI Compliant iFrame in action!
 
 ## License
 
