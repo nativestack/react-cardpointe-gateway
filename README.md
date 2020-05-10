@@ -2,6 +2,8 @@
 
 **Authored By: [NativeStack Engineering](https://www.upwork.com/ag/nativestack/)**
 
+CardConnect's CardPointe Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
+
 ## Product Under Development and Being Tested
 
 We are working with CardConnect to provide a fully customizeable and PCI compliant solution for modern web frameworks. We did not expect this package to be as popular as it turned out to be. We are still testing the features in this package and working to make it compatible across as many different platforms as possible. Please contact us at **(628) 400 2701** or email us at **Support@NativeStack.io** for help implementing this service into your project until we have ths package ready.
@@ -9,9 +11,7 @@ We are working with CardConnect to provide a fully customizeable and PCI complia
 ### Changelog & Updates
 
 -   Sunday 10 May 2020: Full hosted iFrame react component is working with a working example application `</App>`. Needs additional props to set additional CardPointe Hosted iFrame Configurations. The component returns a **token** and an **expiration date**.
--   Initial deployments not working or tested.
-
-CardConnect's CardPointe Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe for React.js applications.
+-   Saturday 9 May 2020: Initial deployments not working or tested.
 
 ## Installation
 
