@@ -37,6 +37,7 @@ export default class CardPointeTokenizer extends Component {
 				}
 
 				this.props.tokenProps.userEmvData(emvData)
+				event.preventDefault()
 			},
 			false
 		)
