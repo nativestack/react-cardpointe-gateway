@@ -91,7 +91,7 @@ userEmvData = (emvData) => {
 };
 ```
 
-The `render` function in your parent component needs to declare a `tokenProps` object that will be used to pass the token data needed by the payment gateway to authorize and capture a transaction with any credit card securely and in compliance with PCI. You will need this tokenized `emvData` to make your `/auth` and `/capture` API calls to [**CardPoint's CardConnect API**](https://developer.cardconnect.com/cardconnect-api) to capture your transactions after securely tokenizing your user's credit card with an implementation like the example below.
+The `render` function in your parent component needs to declare a `tokenProps` object that will be used to pass the token data needed by the payment gateway to authorize and capture a transaction with any credit card securely and in compliance with PCI. You will need this tokenized `emvData` to make your `/auth` and `/capture` API calls to [**CardPointe's CardConnect API**](https://developer.cardconnect.com/cardconnect-api) to capture your transactions after securely tokenizing your user's credit card with an implementation like the example below.
 
 You must implement the [CardConnect Hosted iFrame Tokenizer](https://developer.cardconnect.com/hosted-iframe-tokenizer) options you want to support in your implementations of this component. Add the options to your `tokenProps` object as shown in the example below:
 
