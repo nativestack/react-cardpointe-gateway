@@ -58,9 +58,10 @@ export default class CardPointeTokenizer extends Component {
 			cardnumbernumericonly: this.props.tokenProps.cardnumbernumericonly,
 			orientation: this.props.tokenProps.orientation,
 			invalidinputevent: this.props.tokenProps.invalidinputevent,
-			tokenizewheninactive: this.props.tokenProps.tokenizewheninactive,
 			enhancedresponse: this.props.tokenProps.enhancedresponse,
-			formatinput: this.props.tokenProps.formatinput
+			formatinput: this.props.tokenProps.formatinput,
+			tokenizewheninactive: this.props.tokenProps.tokenizewheninactive,
+			inactivityto: this.props.tokenProps.inactivityto
 		})
 
 		const iFrameUrl = url + encodeURI(cssStyle) + '&' + params

@@ -61,9 +61,10 @@ export default class App extends Component {
 			cardnumbernumericonly: true,
 			orientation: 'horizontal',
 			invalidinputevent: true,
-			tokenizewheninactive: true,
 			enhancedresponse: true,
-			formatinput: true
+			formatinput: true,
+			tokenizewheninactive: true,
+			inactivityto: 500
 		}
 
 		/*
