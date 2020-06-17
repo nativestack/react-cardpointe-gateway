@@ -1,6 +1,6 @@
 {
     "name": "react-cardpointe-gateway",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "description": "CardConnect Hosted iFrame Tokenizer & PCI Compliant CardSecure tokenization package to securely authorize & capture transactions with NativeStack & CardPointe on React.js.",
     "author": "NativeStack Engineering",
     "license": "GPL-3.0-or-later",
