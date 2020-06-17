@@ -46,9 +46,8 @@ export default class CardPointeTokenizer extends Component {
 	renderTokenizerUi() {
 		const url = `https://${this.props.site}.cardconnect.com:${this.props.port}/itoke/ajax-tokenizer.html`
 		// #ccnumfield #cccvvfield #ccexpiryyear #ccexpirymonth {}
-		// &input{font-size:18px;height:21px;padding:10px;line-height:1.5;border-radius:3px; color:#495057;background-color:#fff;background-clip:padding-box;border:1pxsolid#ced4da;overflow:visible;margin:0;font-family:'Open+Sans','Segoe+UI','DejaVu+Sans','sans-serif';-webkit-appearance:textfield;}
 		const cssStyle =
-			'?css=.error{color:red;border-color:red;}input{font-size:18px;height:22px;border-radius:3px;margin-bottom:20px;}select{height:27px;}label{font-family:sans-serif;}'
+			'css=.error{color:red;border-color:red;}label{font-family:sans-serif;font-size:10px;}input{height:18px;font-size:22px;}body{margin:0px;height:100%}select{height:18px;}'
 
 		const params = new URLSearchParams({
 			maskfirsttwo: this.props.tokenProps.maskfirsttwo,
@@ -64,7 +63,7 @@ export default class CardPointeTokenizer extends Component {
 			inactivityto: this.props.tokenProps.inactivityto
 		})
 
-		const iFrameUrl = url + encodeURI(cssStyle) + '&' + params
+		const iFrameUrl = url + '?' + params + '&' + encodeURI(cssStyle)
 
 		return (
 			<Container className={styles.native_stack_payments}>
