@@ -47,7 +47,7 @@ export default class CardPointeTokenizer extends Component {
 		const url = `https://${this.props.site}.cardconnect.com:${this.props.port}/itoke/ajax-tokenizer.html`
 		// #ccnumfield #cccvvfield #ccexpiryyear #ccexpirymonth {}
 		const cssStyle =
-			'css=.error{color:red;border-color:red;}label{font-family:sans-serif;font-size:10px;}input{height:18px;font-size:18px;}body{margin:0px;height:100%}select{height:18px;}'
+			'css=.error{color:red;border-color:red;}label{font-family:sans-serif;font-size:12px;}input{height:18px;font-size:18px;}body{margin:0px;height:100%}select{height:18px;}'
 
 		const params = new URLSearchParams({
 			maskfirsttwo: this.props.tokenProps.maskfirsttwo,
